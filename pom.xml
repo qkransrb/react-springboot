@@ -49,6 +49,23 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!-- ./mvnw jib:dockerBuild -Djib.to.image={imageName}:{version} -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:11.0-oracle</image>
+                    </from>
+                    <container>
+                        <ports>
+                            <port>8080</port>
+                        </ports>
+                        <format>OCI</format>
+                    </container>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
