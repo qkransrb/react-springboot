@@ -49,7 +49,10 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <!-- ./mvnw jib:dockerBuild -Djib.to.image={imageName}:{version} -->
+            <!--
+                * Build Local Docker Image -> ./mvnw jib:dockerBuild -Djib.to.image={imageName}:{version}
+                * Build Image to DockerHub -> ./mvnw clean install jib:build -Djib.to.image=qkransrb90/react-springboot:v1
+            -->
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
